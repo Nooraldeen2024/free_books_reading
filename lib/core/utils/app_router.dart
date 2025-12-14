@@ -1,6 +1,6 @@
 import 'package:free_books_reading/Features/home/presentation/views/home_view.dart';
 import 'package:free_books_reading/Features/presentation/view/splash_view.dart';
-import 'package:free_books_reading/Features/presentation/view/widgets/book_details_view.dart';
+import 'package:free_books_reading/Features/presentation/view/book_details_view.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class AppRouter {

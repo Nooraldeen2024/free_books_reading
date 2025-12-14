@@ -3,6 +3,7 @@ import 'package:free_books_reading/Features/presentation/view/widgets/book_ratin
 import 'package:free_books_reading/Features/presentation/view/widgets/books_action.dart';
 import 'package:free_books_reading/Features/presentation/view/widgets/custom_book_details_app_bar.dart';
 import 'package:free_books_reading/Features/presentation/view/widgets/custom_book_item.dart';
+import 'package:free_books_reading/Features/presentation/view/widgets/similer_books_list_view.dart';
 import 'package:free_books_reading/core/utils/style.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
@@ -31,6 +32,17 @@ class BookDetailsViewBody extends StatelessWidget {
           BookRating(mainAxisAlignment: MainAxisAlignment.center),
           const SizedBox(height: 37),
           const BooksAction(),
+          const SizedBox(height: 50),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              'You can also like',
+              style: Styles.txtStyle14.copyWith(fontWeight: FontWeight.bold),
+            ),
+          ),
+          const SizedBox(height: 16),
+          SimilarBooksListView(),
+          const SizedBox(height: 40),
         ],
       ),
     );
