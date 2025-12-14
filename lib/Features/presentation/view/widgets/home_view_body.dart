@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:free_books_reading/Features/presentation/view/widgets/best_seller_list_view_item.dart';
+import 'package:free_books_reading/Features/presentation/view/widgets/best_seller_list_view.dart';
 import 'package:free_books_reading/Features/presentation/view/widgets/custom_app_bar.dart';
 import 'package:free_books_reading/Features/presentation/view/widgets/featured_list_view.dart';
-import 'package:free_books_reading/core/utils/assets.dart';
 import 'package:free_books_reading/core/utils/style.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -10,19 +9,33 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
-          CustomAppBar(),
-          FeatureedBooksListView(),
-          SizedBox(height: 40),
-          Text('Best Seller', style: Styles.txtStyle18),
-          SizedBox(height: 20),
-          BestSellerListViewItem(),
-        ],
-      ),
+    return CustomScrollView(
+      slivers: [
+        SliverToBoxAdapter(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: const [
+              Padding(
+                padding: EdgeInsets.only(right: 30, left: 30, top: 20),
+                child: CustomAppBar(),
+              ),
+              FeatureedBooksListView(),
+              SizedBox(height: 40),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 30),
+                child: Text('Best Seller', style: Styles.txtStyle18),
+              ),
+              SizedBox(height: 20),
+            ],
+          ),
+        ),
+        const SliverFillRemaining(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 30),
+            child: BestSellerListView(),
+          ),
+        ),
+      ],
     );
   }
 }
