@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:free_books_reading/Features/presentation/view/widgets/book_rating.dart';
 import 'package:free_books_reading/Features/presentation/view/widgets/custom_book_details_app_bar.dart';
 import 'package:free_books_reading/Features/presentation/view/widgets/custom_book_item.dart';
 import 'package:free_books_reading/core/utils/style.dart';
@@ -25,6 +26,8 @@ class BookDetailsViewBody extends StatelessWidget {
             opacity: 0.7,
             child: Text('Rudyard kipling', style: Styles.txtStyle18),
           ),
+          const SizedBox(height: 18),
+          BookRating(mainAxisAlignment: MainAxisAlignment.center),
         ],
       ),
     );
