@@ -1,5 +1,5 @@
 import 'package:free_books_reading/Features/home/presentation/view/home_view.dart';
-import 'package:free_books_reading/Features/home/presentation/view/splash_view.dart';
+import 'package:free_books_reading/Features/splash/presentation/view/splash_view.dart';
 import 'package:free_books_reading/Features/home/presentation/view/book_details_view.dart';
 import 'package:free_books_reading/Features/search/presentation/view/search_view.dart';
 import 'package:go_router/go_router.dart';
