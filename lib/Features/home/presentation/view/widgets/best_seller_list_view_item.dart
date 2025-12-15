@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:free_books_reading/Features/presentation/view/widgets/book_rating.dart';
+import 'package:free_books_reading/Features/home/presentation/view/widgets/book_rating.dart';
 import 'package:free_books_reading/core/utils/app_router.dart';
 import 'package:free_books_reading/core/utils/assets.dart';
 import 'package:free_books_reading/core/utils/style.dart';

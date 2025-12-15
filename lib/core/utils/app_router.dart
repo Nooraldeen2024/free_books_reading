@@ -1,11 +1,13 @@
-import 'package:free_books_reading/Features/home/presentation/views/home_view.dart';
-import 'package:free_books_reading/Features/presentation/view/splash_view.dart';
-import 'package:free_books_reading/Features/presentation/view/book_details_view.dart';
+import 'package:free_books_reading/Features/home/presentation/view/home_view.dart';
+import 'package:free_books_reading/Features/home/presentation/view/splash_view.dart';
+import 'package:free_books_reading/Features/home/presentation/view/book_details_view.dart';
+import 'package:free_books_reading/Features/search/presentation/view/search_view.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class AppRouter {
   static const kHomeView = '/homeView';
   static const kBookDetailsView = '/BookDetailsView';
+  static const kSearchView = '/SearchView';
   static final router = GoRouter(
     routes: [
       GoRoute(path: '/', builder: (context, state) => const SplashView()),
@@ -13,6 +15,10 @@ abstract class AppRouter {
       GoRoute(
         path: kBookDetailsView,
         builder: (context, state) => const BookDetailsView(),
+      ),
+      GoRoute(
+        path: kSearchView,
+        builder: (context, state) => const SearchView(),
       ),
     ],
   );

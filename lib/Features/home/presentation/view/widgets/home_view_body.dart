@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:free_books_reading/Features/presentation/view/widgets/best_seller_list_view.dart';
-import 'package:free_books_reading/Features/presentation/view/widgets/custom_app_bar.dart';
-import 'package:free_books_reading/Features/presentation/view/widgets/featured_list_view.dart';
+import 'package:free_books_reading/Features/home/presentation/view/widgets/best_seller_list_view.dart';
+import 'package:free_books_reading/Features/home/presentation/view/widgets/custom_app_bar.dart';
+import 'package:free_books_reading/Features/home/presentation/view/widgets/featured_list_view.dart';
 import 'package:free_books_reading/core/utils/style.dart';
 
 class HomeViewBody extends StatelessWidget {

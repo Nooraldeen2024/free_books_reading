@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:free_books_reading/Features/presentation/view/widgets/sliding_text.dart';
+import 'package:free_books_reading/Features/home/presentation/view/widgets/sliding_text.dart';
 import 'package:free_books_reading/core/utils/app_router.dart';
 import 'package:free_books_reading/core/utils/assets.dart';
 import 'package:go_router/go_router.dart';
