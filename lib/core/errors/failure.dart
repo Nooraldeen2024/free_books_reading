@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
 
 abstract class Failure {
   final String errMessage;
@@ -33,8 +32,6 @@ class ServerFailure extends Failure {
 
       case DioExceptionType.badCertificate:
         return ServerFailure('مشكلة في شهادة الأمان');
-
-      case DioExceptionType.unknown:
       default:
         return ServerFailure('حدث خطأ غير متوقع');
     }
