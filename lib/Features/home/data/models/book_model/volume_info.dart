@@ -21,6 +21,10 @@ class VolumeInfo extends Equatable {
   final String? contentVersion;
   final PanelizationSummary? panelizationSummary;
 
+  /// ✅ NEW: rating
+  final double? averageRating;
+  final int? ratingsCount;
+
   /// ✅ جعلناها nullable لأن API قد لا يرجع imageLinks لبعض الكتب
   final ImageLinks? imageLinks;
 
@@ -44,6 +48,11 @@ class VolumeInfo extends Equatable {
     this.allowAnonLogging,
     this.contentVersion,
     this.panelizationSummary,
+
+    // ✅ NEW
+    this.averageRating,
+    this.ratingsCount,
+
     this.imageLinks,
     this.language,
     this.previewLink,
@@ -97,6 +106,10 @@ class VolumeInfo extends Equatable {
               ? ReadingModes.fromJson(Map<String, dynamic>.from(rm))
               : null);
 
+    // ✅ NEW: averageRating / ratingsCount (آمن)
+    final double? averageRating = (json['averageRating'] as num?)?.toDouble();
+    final int? ratingsCount = (json['ratingsCount'] as num?)?.toInt();
+
     return VolumeInfo(
       title: json['title'] as String?,
       authors: authors,
@@ -105,13 +118,18 @@ class VolumeInfo extends Equatable {
       description: json['description'] as String?,
       industryIdentifiers: industryIdentifiers,
       readingModes: readingModes,
-      pageCount: (json['pageCount'] as num?)?.toInt(), // ✅ آمن لو كانت double
+      pageCount: (json['pageCount'] as num?)?.toInt(),
       printType: json['printType'] as String?,
       categories: categories,
       maturityRating: json['maturityRating'] as String?,
       allowAnonLogging: json['allowAnonLogging'] as bool?,
       contentVersion: json['contentVersion'] as String?,
       panelizationSummary: panelizationSummary,
+
+      // ✅ NEW
+      averageRating: averageRating,
+      ratingsCount: ratingsCount,
+
       imageLinks: imageLinks,
       language: json['language'] as String?,
       previewLink: json['previewLink'] as String?,
@@ -135,7 +153,12 @@ class VolumeInfo extends Equatable {
     'allowAnonLogging': allowAnonLogging,
     'contentVersion': contentVersion,
     'panelizationSummary': panelizationSummary?.toJson(),
-    'imageLinks': imageLinks?.toJson(), // ✅ كان عندك خطأ هنا
+
+    // ✅ NEW
+    'averageRating': averageRating,
+    'ratingsCount': ratingsCount,
+
+    'imageLinks': imageLinks?.toJson(),
     'language': language,
     'previewLink': previewLink,
     'infoLink': infoLink,
@@ -158,6 +181,11 @@ class VolumeInfo extends Equatable {
     allowAnonLogging,
     contentVersion,
     panelizationSummary,
+
+    // ✅ NEW
+    averageRating,
+    ratingsCount,
+
     imageLinks,
     language,
     previewLink,

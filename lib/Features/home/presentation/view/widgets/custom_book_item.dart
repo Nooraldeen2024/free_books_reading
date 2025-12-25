@@ -3,7 +3,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 
 class CustomBookImage extends StatelessWidget {
   const CustomBookImage({super.key, required this.imageUrl});
-  final String imageUrl;
+  final String? imageUrl;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -16,7 +16,7 @@ class CustomBookImage extends StatelessWidget {
 
           child: CachedNetworkImage(
             fit: BoxFit.fill,
-            imageUrl: imageUrl,
+            imageUrl: imageUrl!,
             placeholder: (context, url) =>
                 Center(child: const CircularProgressIndicator()),
             errorWidget: (context, url, error) => Icon(Icons.error),
