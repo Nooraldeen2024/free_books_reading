@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:free_books_reading/Features/home/presentation/manger/similar_books_cubit/similar_books_cubit.dart';
+import 'package:free_books_reading/Features/home/presentation/view/widgets/best_seller_list_view_item.dart';
 import 'package:free_books_reading/Features/home/presentation/view/widgets/custom_book_item.dart';
+import 'package:free_books_reading/core/utils/app_router.dart';
 import 'package:free_books_reading/core/widgets/custom_error_widget.dart';
 import 'package:free_books_reading/core/widgets/custom_loading_indicator.dart';
+import 'package:go_router/go_router.dart';
 
 class SimilarBooksListView extends StatelessWidget {
   const SimilarBooksListView({super.key});
@@ -21,8 +24,13 @@ class SimilarBooksListView extends StatelessWidget {
               itemCount: state.books.length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 5),
+                return GestureDetector(
+                  onTap: () {
+                    context.replace(
+                      AppRouter.kBookDetailsView,
+                      extra: state.books[index],
+                    );
+                  },
                   child: CustomBookImage(
                     imageUrl:
                         state.books[index].volumeInfo.imageLinks?.thumbnail ??
